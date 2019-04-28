@@ -4,11 +4,15 @@
 
 Created by Julián Caro Linares
 
-jcarolinares@gmail.# COMBAK:
+jcarolinares@gmail:
 
 CC-BY-SA
 
 '''
+
+from PIL import Image #Image manippulation library
+import time
+import subprocess
 
 import requests
 from bs4 import BeautifulSoup
@@ -42,11 +46,40 @@ for link in soup.find_all('picture'):
 
 # print(images_url)
 
+#Pillow creates the wallpaper base image
+wallpaper=Image.new("RGB",(450*3,540*2))
+# wallpaper.show()
+wallpaper.save('wallpaper','png')
+
 #Download the three last t-shirts
-for index in range(3):
-    file=open(titles_url[index]+".jpg",'w')
+for index in range(6):
+	# file=open(titles_url[index]+".jpg",'w')
+	file=open("image_"+str(index)+".jpg",'w')
+	r = s.get(images_url[index])
+	with open("image_"+str(index)+".jpg", "wb") as code:
+		code.write(r.content)
+	img = Image.open("image_"+str(index)+".jpg")
+	# img.show()
+	if index <3:
+		wallpaper.paste(img,(450*index,0))
+	else:
+		wallpaper.paste(img,(450*(index-3),540,450*(index-3)+450,2*540))#upper left corner, down right corner (x,y,x,y) #450,540,2*450,2*540)
 
-    r = s.get(images_url[index])
+wallpaper.save('wallpaper.png','png')
 
-    with open(titles_url[index]+".jpg", "wb") as code:
-        code.write(r.content)
+
+
+#Download all the available images t-shirts
+# counter=1
+# for url in images_url:
+# 	file=open("image_"+str(counter)+".jpg",'w')
+# 	r = s.get(url)
+# 	with open("image_"+str(counter)+".jpg", "wb") as code:
+# 		code.write(r.content)
+# 	img = Image.open("image_"+str(counter)+".jpg")
+# 	wallpaper.paste(img)
+# 	wallpaper.save('wallpaper','png')
+# 	counter=counter+1
+
+#Put the new screensaver
+subprocess.call('feh --bg-max ~/proyectos/qwertee-scrapper/wallpaper.png' ,shell=True)
