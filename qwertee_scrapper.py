@@ -88,7 +88,7 @@ def main():
 
 
 	# Put the new screensaver
-	subprocess.call('feh --bg-max ~/proyectos/qwertee-scrapper/wallpaper.png' ,shell=True)
+	subprocess.call('feh --bg-max ./wallpaper.png' ,shell=True)
 	print("Wallpaper ready")
 
 if __name__ == "__main__":
