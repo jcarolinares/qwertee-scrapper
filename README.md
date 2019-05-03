@@ -21,13 +21,15 @@ Write python3 qwertee_scrapper.py --help to see all the options
 
 ```bash
 usage: qwertee_scrapper.py [-h] [--pages PAGES] [--rows ROWS] [--cols COLS]
+                           [--random RANDOM]
 
 optional arguments:
-  -h, --help     show this help message and exit
-  --pages PAGES  Defines the number of pages to be downloaded. Each page means
-                 20 images
-  --rows ROWS    Defines the number of rows.
-  --cols COLS    Defines the number of columns.
+  -h, --help       show this help message and exit
+  --pages PAGES    Defines the number of pages to be downloaded. Each page
+                   means 20 images
+  --rows ROWS      Defines the number of rows.
+  --cols COLS      Defines the number of columns.
+  --random RANDOM  Randomize the images used in the wallpaper->true/false
 ```
 
 A good example: I want to download 10 pages and create a wallpaper with 10 rows and 20 columns:
