@@ -1,6 +1,12 @@
 # qwertee-scrapper
 A simple qwertee  Scrapper to download the images from the qwertee website creating a wallpaper collage to your computer.
 
+<center>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=LjusYJJThxg
+" target="_blank"><img src="http://img.youtube.com/vi/LjusYJJThxg/0.jpg"
+alt="Basic video" width="240" height="180" border="10" /></a>
+</center>
+
 You can use crontab to schedule your new wallapaper with the new designs every day.
 
 ## Requirements
