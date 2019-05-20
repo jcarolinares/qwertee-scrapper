@@ -73,8 +73,8 @@ def main():
 	print("\nNumber of images: "+str(len(t_shirt_list)))
 
 	#Building the wallpaper collage
-	img_x=t_shirt_list[0].img.getbbox()[2]
-	img_y=t_shirt_list[0].img.getbbox()[3]
+	img_x=255#t_shirt_list[1].img.getbbox()[2]
+	img_y=306#t_shirt_list[1].img.getbbox()[3]
 
 	screen_resolution=(x_size*img_x,y_size*img_y)
 	wallpaper=Image.new("RGB",screen_resolution)
